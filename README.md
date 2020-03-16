@@ -1,5 +1,27 @@
 # Digital Image Correlation project: setup
 
+## Table of Contents
+
+  - [Table of Contents](#table-of-contents)
+  - [Pre-requirements:](#pre-requirements)
+  - [Cloning the Repository](#cloning-the-repository)
+  - [Managing Environments](#managing-environments)
+  - [Setting up the environments and installing basic packages](#setting-up-the-environments-and-installing-basic-packages)
+    - [How to make sure python in installed](#how-to-make-sure-python-in-installed)
+    - [How to make sure that jupyter is working](#how-to-make-sure-that-jupyter-is-working)
+  - [Installing all the files for OCT_lib](#installing-all-the-files-for-octlib)
+  - [Running the examples](#running-the-examples)
+
+
+## Pre-requirements:
+- Navigate folders from the `command prompt`: it's enough to know `cd` usage:
+  - `cd`  to read the current folder
+  - `cd ..`  to move one folder up
+  - `cd [relative or absolute path]` to change the current path to that folder
+  - Know you can use `tab` to autocomplete
+  - Know you can use `UP arrow` to recall last commands
+  
+
 ## Cloning the Repository 
 Very first thing: create a folder on your HD that will keep **all** the stuff relevant to the project. We will call it *DIC_project*.
 
@@ -9,13 +31,13 @@ Using the `Git` software, you could do it automatically and also make sure the r
 - go to [OCT_lib](https://github.com/LucaBartolini/OCT)
 - on the right, there's a `Clone or Download` green button
 - click on it, then on `Download Zip`
-- unzip those contents in your *DIC_project*
+- unzip the folder inside the zip file into your *DIC_project*
 
 Your project folder should now look like:
 ```
 DIC_project
 │   
-└─── OCT_lib
+└─── OCT-master
 ```
 
 ## Managing Environments
@@ -29,7 +51,9 @@ Run the Anaconda Prompt (on Win10: `Windows` key, type `anaconda` and the execut
 
 4) To create a new environment, type 
 
-    `conda create -n dic_test`
+    `conda create -n dic_test python=3.7`
+
+    We are fixing the python version to 3.7 because of compatibility. That restriction might be eased in the future.
 
 5) To make sure that the creation was successful, we can list all the available environments, typing:
     
@@ -79,3 +103,28 @@ If that doesn't work, you may have to add your anaconda path to the system envir
 - Run jupyter: `jupyter notebook`
 - The command will start a local server, living within your command prompt, and your browser connect to that server and provide you with a nice interface to run python code and much more. 
 - Later, you will set up your jupyter extensions in [here (jupyter must be running in your prompt)](http://localhost:8888/tree#nbextensions_configurator)
+
+## Installing all the files for OCT_lib
+From within the Anaconda prompt, navigate to the `OCT_lib` folder; the command will be something like:
+
+`cd "some_path\DIC_project\OCT-master"` 
+
+When you are inside that folder, with the correct environment activated,  you can install all the required packages (libraries) by typing:
+
+`pip install -r requirements.txt`
+
+the package manager `pip` will install each necessary library. This command is the bottleneck of the process, and doesn not work smoothly on every machine. We'll have to work through it somehow.
+
+These commands might come in handy:
+- `conda install -c menpo opencv=3`
+-  
+
+
+## Running the examples
+At the end, the examples from OCT_lib should be running fine.
+From the prompt:
+
+- `cd` to `OCT-master`
+- run `jupyter notebook`
+- open the example folder in the Jupyter navigator (under tab `Files` in http://localhost:8888/tree)
+- See if the first cell works. If so, the imports are successful, which means you have all the libraries correctly installed. If it doesn't, read the error and work on the installs based on what the error says. 
