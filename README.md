@@ -1,8 +1,7 @@
-# Digital Image Correlation project: setup
+# Digital Image Correlation project: setup <!-- omit in toc -->
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
-  - [Table of Contents](#table-of-contents)
   - [Pre-requirements:](#pre-requirements)
   - [Cloning the Repository](#cloning-the-repository)
   - [Managing Environments](#managing-environments)
